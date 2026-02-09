@@ -33,29 +33,27 @@ This project mirrors that reality using **SPE3 (flow & pressure)** and **SPE9 st
 
 ## Workflow summary
 
-SCAL Tables (SWOF / SGOF)
-│
-├─► Quality control
-│ - Corey parameterization (endpoints, exponents)
-│ - Monotonic interpolation (PCHIP)
-│
-├─► SCAL uncertainty screening
-│ - Endpoint & exponent perturbations
-│ - Mobility indices (I_WO, I_GO)
-│
-├─► Pressure history (benchmark-derived)
-│
-├─► Screening Mechanical Earth Model (MEM)
-│ - Stress gradients (Sv, SHmax, Shmin)
-│ - Effective stress evolution (σ′ = σ − αPp)
-│ - Stress-sensitive k / φ (pseudo-coupling)
-│
-└─► Fault stability screening (SPE9-style)
-- Coulomb failure & slip tendency
-- Stress regime bracketing (normal vs strike-slip)
-- Orientation sweep (dip/strike)
-- Friction sensitivity (μ)
-- Critical pressure for reactivation (ΔPcrit)
+## Workflow summary
+
+```mermaid
+flowchart TD
+  A[SCAL Tables\n(SWOF / SGOF)] --> B[Quality control\n+ curve representation]
+  B --> B1[Corey parameterization\n(endpoints, exponents, RMSE)]
+  B --> B2[PCHIP interpolation\n(monotonic)]
+  B --> C[SCAL uncertainty screening]
+  C --> C1[Perturb endpoints/exponents]
+  C --> C2[Mobility indices\nI_WO and I_GO]
+  C2 --> D[Pressure input\n(benchmark-derived or scenarios)]
+  D --> E[Screening MEM]
+  E --> E1[Stress gradients\nSv, SHmax, Shmin]
+  E --> E2[Effective stress\nσ′ = σ − αPp]
+  E2 --> F[Stress-sensitive k/φ\n(pseudo-coupling)]
+  F --> G[Fault stability screening\n(SPE9-style)]
+  G --> G1[Coulomb margin + slip tendency]
+  G --> G2[Regime bracketing\n(normal vs strike-slip)]
+  G --> G3[Orientation sweep\n(dip/strike)]
+  G --> G4[Friction sensitivity\nμ sweep]
+  G4 --> H[Output: ΔPcrit\n+ sensitivity bounds]
 
 ---
 
