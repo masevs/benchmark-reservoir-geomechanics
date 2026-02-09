@@ -63,8 +63,8 @@ SCAL Tables (SWOF / SGOF)
 
 ### 1.SCAL sensitivity (flow-dominated uncertainty)
 
-- **Water–oil mobility (I_WO) is dominated by SWOF parameters (Sor, nw).
-- **Gas–oil mobility (I_GO) is dominated by SGOF parameters (Sorg, ng).
+- Water–oil mobility (I_WO) is dominated by SWOF parameters (Sor, nw).
+- Gas–oil mobility (I_GO) is dominated by SGOF parameters (Sorg, ng).
 - Cross-system influence is negligible in screening metrics.
 
 SCAL uncertainty is a **first order control on flow behavior**.
@@ -98,22 +98,11 @@ Friction uncertainty is first order, and regime bracketing is essential in scree
 
 ## Repository structure
 benchmark-reservoir-geomechanics/
-│
-├── notebooks/ # Colab-exported Jupyter notebooks
-│ ├── SCAL_SPE3.ipynb
-│ └── SCAL_SPE9.ipynb  
-│
-├── src/ # Reusable Python modules
-│ ├── scal.py
-│ ├── mem.py
-│ └── fault.py
-│
-├── figures/ # Final figures used in paper
-├── results/ # CSV summaries (RMSE, mobility, ΔPcrit)
-├── data/ # Small reference tables (no binaries)
-│
-└── README.md
-
+- `notebooks/` : SCAL_SPE3.ipynb, SCAL_SPE9.ipynb  
+- `figures/` : Final figures used in paper
+- `results/` : CSV summaries (RMSE, mobility, ΔPcrit)
+- `data/` : Small reference tables (no binaries)
+- `README.md`
 
 ---
 
